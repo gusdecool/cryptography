@@ -1,0 +1,29 @@
+{
+    "name": "gusdecool/cryptography",
+    "version": "1.0.0",
+    "license": "MIT",
+    "description": "Cryptography library",
+    "type": "library",
+    "authors": [
+        {
+            "name": "GusDeCooL",
+            "email": "gusdecool@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "GusDeCooL\\Cryptography\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "GusDeCooL\\Cryptography\\Test\\": "test/"
+        }
+    },
+    "require": {
+        "ext-mycrypt": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.8.*"
+    }
+}
