@@ -16,6 +16,7 @@ class AesEncryption
     #------------------------------------------------------------------------------------------------------
 
     const CHIPPER = 'AES256';
+    const IV = '\'Nl6P0*3\'Nl6P0*3';
 
     /**
      * @var string
@@ -49,7 +50,7 @@ class AesEncryption
     public function encrypt(string $input): string
     {
         return base64_encode(
-            openssl_encrypt ($input, self::CHIPPER, $this->secureKey)
+            openssl_encrypt ($input, self::CHIPPER, $this->secureKey, 0, self::IV)
         );
     }
 
@@ -62,7 +63,7 @@ class AesEncryption
     public function decrypt(string $input): string
     {
         return trim(
-            openssl_decrypt(base64_decode($input), self::CHIPPER, $this->secureKey)
+            openssl_decrypt(base64_decode($input), self::CHIPPER, $this->secureKey, 0, self::IV)
         );
     }
 }
