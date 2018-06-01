@@ -31,7 +31,7 @@ class AesEncryption
      *
      * @param string $aesKey security key to use for encryption and decryption
      */
-    public function __construct($aesKey)
+    public function __construct(string $aesKey)
     {
         $this->secureKey = hash('sha256', $aesKey, true);
     }
@@ -46,7 +46,7 @@ class AesEncryption
      * @param string $input
      * @return string
      */
-    public function encrypt($input)
+    public function encrypt(string $input): string
     {
         return base64_encode(
             openssl_encrypt ($input, self::CHIPPER, $this->secureKey)
@@ -59,7 +59,7 @@ class AesEncryption
      * @param string $input
      * @return string
      */
-    public function decrypt($input)
+    public function decrypt(string $input): string
     {
         return trim(
             openssl_decrypt(base64_decode($input), self::CHIPPER, $this->secureKey)
