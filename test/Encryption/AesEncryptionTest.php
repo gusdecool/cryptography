@@ -39,7 +39,7 @@ class AesEncryptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testEncrypt()
     {
-        $this->assertEquals('+P24cXIcklfKOHOuFRkIE3WprB6W11NRZnzg8SJRGoM=', $this->encryption->encrypt('alpha'));
+        $this->assertEquals('VHExMGMweUh4anRGZjlKbnphK2ZrZz09', $this->encryption->encrypt('alpha'));
     }
 
     /**
@@ -47,6 +47,6 @@ class AesEncryptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testDecrypt()
     {
-        $this->assertEquals('alpha', $this->encryption->decrypt('+P24cXIcklfKOHOuFRkIE3WprB6W11NRZnzg8SJRGoM='));
+        $this->assertEquals('alpha', $this->encryption->decrypt('VHExMGMweUh4anRGZjlKbnphK2ZrZz09'));
     }
 }
