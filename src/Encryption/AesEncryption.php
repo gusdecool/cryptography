@@ -50,7 +50,7 @@ class AesEncryption
     public function encrypt(string $input): string
     {
         return base64_encode(
-            openssl_encrypt ($input, self::CHIPPER, $this->secureKey, 0, self::IV)
+            openssl_encrypt($input, self::CHIPPER, $this->secureKey, 0, self::IV)
         );
     }
 

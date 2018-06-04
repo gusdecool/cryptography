@@ -37,16 +37,10 @@ class AesEncryptionTest extends \PHPUnit_Framework_TestCase
     /**
      * @group unit
      */
-    public function testEncrypt()
+    public function testEncryptDecrypt()
     {
-        $this->assertEquals('+P24cXIcklfKOHOuFRkIE3WprB6W11NRZnzg8SJRGoM=', $this->encryption->encrypt('alpha'));
-    }
-
-    /**
-     * @group unit
-     */
-    public function testDecrypt()
-    {
-        $this->assertEquals('alpha', $this->encryption->decrypt('+P24cXIcklfKOHOuFRkIE3WprB6W11NRZnzg8SJRGoM='));
+        $encrypt_word = 'alpha';
+        $encrypted = $this->encryption->encrypt($encrypt_word);
+        $this->assertEquals($encrypt_word, $this->encryption->decrypt($encrypted));
     }
 }
